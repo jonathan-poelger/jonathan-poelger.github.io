@@ -1,0 +1,91 @@
+.vdiv {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #333;
+    border-radius: 10px;
+    background-color: #333333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.vdiv:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.vdiv input {
+    padding: 12px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #777;
+    border-radius: 5px;
+    background-color: #282828;
+    color: #fff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.vdiv input:focus {
+    border-color: #00aaff;
+    background-color: #333333;
+    outline: none;
+}
+
+.vdiv a {
+    padding: 12px;
+    width: 20%;
+    background-color: #00aaff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.vdiv a:hover {
+    background-color: #0088cc;
+    transform: scale(1.05);
+}
+
+.hdiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.hdiv input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #777;
+    background-color: #222;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.hdiv input:focus {
+    border-color: #00aaff;
+    background-color: #333;
+    outline: none;
+}
+
+.hdiv button {
+    padding: 10px 15px;
+    background-color: #00aaff;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.hdiv button:hover {
+    background-color: #0088cc;
+    transform: scale(1.05);
+}

@@ -2,15 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta Content-Security-Policy="frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com;">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BlindTest-inator 3000</title>
     <script src="blindtest.js" defer charset="UTF-8"></script>
     <link rel="stylesheet" href="blindtest.css" charset="UTF-8">
+    <link rel="stylesheet" href="main.css" charset="UTF-8">
 </head>
 <body>
-    <!-- Add song -->
+    <div class="container">
+        <div class="visuals">
+            <div class="video-player">
+                <iframe id="player" src="" frameborder="0" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                <div class="overlay">Guess the Song!</div>
+            </div>
+            
 
-    <!-- Queue -->
-    <!-- Leaderboard -->
+            <div class="infos">
+                <h2>Leaderboard</h2>
+                <p>Details about the game, instructions, etc.</p>
+            </div>
+        </div>
+        
+        <div class = "actions">
+            <div class = "hdiv">
+                    <div class="vdiv">
+                        <input id="video-url" type="text" placeholder="Song name">       
+                        <button onclick="add_song('song')">Add Song</button>
+                        <button onclick="add_song('video')">Add Video</button>
+
+                </div>
+
+                <button onclick="playVideo()" style="width: 10%; height: auto; aspect-ratio: 1;">Start</button>
+
+                <div class="vdiv">
+                    <div class="hdiv">
+                    <input type="text" id="submit_text" placeholder="Your answer...">
+                    <button onclick="submit(document.querySelector('#submit_text').value)">Submit</button>
+                    </div>
+                    <div class="hdiv">
+                        <button onclick="submit('')">???</button>
+                        <button onclick="skip_song()">Skip</button>
+                        <button onclick="history()">History</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

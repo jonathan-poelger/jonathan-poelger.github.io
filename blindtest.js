@@ -43,11 +43,11 @@ async function getFirstYouTubeResult(query) {
 
     try {
         const response = await fetch(searchUrl,{
-            referrerPolicy: "origin",
+            httpReferrer: "https://jonathan-poelger.github.io/blindtest.html"
           });
         const text = await response.text();
         const match = text.match(/\"videoId\": ?\"([^\"]+)\"/);
-        console.log(text)
+        console.error(text)
         if (match) {
             return `https://www.youtube.com/watch?v=${match[1]}`;
         } else {

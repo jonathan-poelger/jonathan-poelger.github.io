@@ -143,7 +143,7 @@ function createGame() {
             }
 
             if (data.type){
-                conn.send({type: "data", players: players, songs: song_queue, index: song_index}); // Data update
+                connections.forEach((conn) => conn.send({type: "data", players: players, songs: song_queue, index: song_index}));
             }
         });
     });
@@ -154,7 +154,12 @@ function createGame() {
 const nextSong = async () => {
     if (hostPeer) {
         song_index += 1;
-        const videoId = song_index < song_queue.length ? await get_url(song_queue[song_index].title) : null;
+        let videoId = null
+        if (song_index >= song_queue.length)
+            song_index -= 1
+        else
+            videoId =  await get_url(song_queue[song_index].title);
+        
         connections.forEach((conn) => conn.send({ type: "song", data: videoId }));
     }
 }

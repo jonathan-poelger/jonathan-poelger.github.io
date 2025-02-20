@@ -79,9 +79,9 @@ function submit(title, type){
     game.send({type: "song", title: title, name: localStorage.getItem("userName")});
 }
 
-const update_song_list = () => {
+const update_song_list = (reveal = 0) => {
     document.getElementById("song-list").innerText = song_queue.map((song, idx) => {
-        return idx < song_index ? `${song.title} (${song.name})` : `????? (${song.name})`;
+        return idx < song_index - reveal ? `${song.title} (${song.name})` : `????? (${song.name})`;
     }).join("\n");
 };
 
@@ -113,6 +113,10 @@ function joinGame(sessionCode) {
             }
             if (data.type === "reveal"){
                 document.querySelector('#player').style.opacity = 1;
+                update_song_list(1);
+            }
+            else{
+                update_song_list();
             }
 
             update_song_list();

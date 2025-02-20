@@ -55,7 +55,7 @@ async function getFirstYouTubeResult(query) {
         }
     } catch (error) {
         console.error("Error fetching YouTube search results:", error);
-        return null;
+        return '';
     }
 }
 
@@ -82,8 +82,9 @@ function submit(title, type){
 }
 
 const update_song_list = (reveal = 0) => {
+    console.log(reveal)
     document.getElementById("song-list").innerText = song_queue.map((song, idx) => {
-        return idx < song_index - reveal ? `${song.title} (${song.name})` : `????? (${song.name})`;
+        return idx < song_index + reveal ? `${song.title} (${song.name})` : `????? (${song.name})`;
     }).join("\n");
 };
 
@@ -120,8 +121,6 @@ function joinGame(sessionCode) {
             else{
                 update_song_list();
             }
-
-            update_song_list();
             document.getElementById("player-list").innerText = players.join("\n");
         });
     });

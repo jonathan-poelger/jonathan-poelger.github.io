@@ -52,3 +52,105 @@ iframe {
 #player {
     opacity: 0;
 }
+
+@media (max-width: 768px) {
+    body {
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        background-color: #1a1a1a;
+        color: white;
+    }
+    
+    .container {
+        width: 90%; /* Adjusted for smaller screens */
+        height: auto; /* Allow container to grow with content */
+        margin: 2vh auto; /* Smaller margin for mobile */
+        display: flex;
+        flex-direction: column;
+        gap: 20px; /* Reduced gap for mobile */
+    }
+    
+    .visuals {
+        display: flex;
+        flex-direction: column; /* Stack vertically on mobile */
+        gap: 20px;
+        height: auto; /* Allow height to adjust */
+    }
+    
+    .video-player {
+        width: 100%; /* Full width on mobile */
+        height: 200px; /* Fixed height for video player */
+        background-color: #333;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    
+    .infos {
+        width: 100%; /* Full width on mobile */
+        background-color: #444;
+        padding: 15px;
+        border-radius: 8px;
+        color: white;
+    }
+    
+    .actions {
+        height: auto; /* Allow height to adjust */
+        margin: 0;
+    }
+    
+    .hdiv {
+        display: flex;
+        flex-direction: column; /* Stack vertically on mobile */
+        gap: 10px; /* Smaller gap for mobile */
+    }
+    
+    .vdiv {
+        display: flex;
+        flex-direction: column;
+        gap: 10px; /* Smaller gap for mobile */
+    }
+    
+    button, input {
+        width: 100%; /* Full width buttons and inputs */
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+    
+    button {
+        background-color: #555;
+        color: white;
+        cursor: pointer;
+    }
+    
+    button:hover {
+        background-color: #666;
+    }
+    
+    input {
+        background-color: #444;
+        color: white;
+    }
+    
+    #player-list, #song-list {
+        max-height: 150px; /* Smaller max height for mobile */
+        overflow-y: auto;
+    }
+    
+    .container {
+        width: 95%; /* Slightly wider on very small screens */
+    }
+
+    .video-player {
+        height: 150px; /* Smaller video player height */
+    }
+
+    .infos {
+        padding: 10px; /* Smaller padding */
+    }
+
+    button, input {
+        font-size: 14px; /* Smaller font size for mobile */
+    }
+}

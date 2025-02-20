@@ -42,10 +42,12 @@ async function getFirstYouTubeResult(query) {
     const searchUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&q=${encodeURIComponent(query)}&key=${apiKey}`;
 
     try {
-        const response = await fetch(searchUrl);
+        const response = await fetch(searchUrl,{
+            referrerPolicy: "origin",
+          });
         const text = await response.text();
         const match = text.match(/\"videoId\": ?\"([^\"]+)\"/);
-
+        console.log(text)
         if (match) {
             return `https://www.youtube.com/watch?v=${match[1]}`;
         } else {
@@ -158,12 +160,14 @@ function createGame() {
 const nextSong = async () => {
     if (hostPeer) {
         song_index += 1;
-        let videoId = null
-        if (song_index >= song_queue.length)
-            song_index -= 1
-        else
-            videoId =  await get_url(song_queue[song_index].title);
-        
+        let videoId = null;
+        if (song_index >= song_queue.length) song_index -= 1;
+        else{
+            
+            if (song_queue[song_index].title)
+                videoId =  await get_url(song_queue[song_index].title);
+
+        }
         connections.forEach((conn) => conn.send({ type: "song", data: videoId }));
     }
 }

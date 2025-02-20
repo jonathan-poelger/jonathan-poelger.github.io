@@ -38,7 +38,7 @@ function extractVideoID(url) {
 }
 
 async function getFirstYouTubeResult(query) {
-    const apiKey = "API_KEY";
+    const apiKey = "AIzaSyAzY3KoT76ea1JqYoU-ZHBh5xMT2jWJahY";
     const searchUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&q=${encodeURIComponent(query)}&key=${apiKey}`;
 
     try {

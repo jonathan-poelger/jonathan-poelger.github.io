@@ -7,7 +7,7 @@
     <title>BlindTest-inator 3000</title>
     <script src="blindtest.js" defer charset="UTF-8"></script>
     <link rel="stylesheet" href="blindtest.css" charset="UTF-8">
-    <link rel="stylesheet" href="main.css" charset="UTF-8">
+    <link rel="stylesheet" href="../main.css" charset="UTF-8">
 </head>
 <body>
     <script src="https://unpkg.com/peerjs@1.4.7/dist/peerjs.min.js"></script>
@@ -45,8 +45,7 @@
                 
                 <div class = "vdiv">
                     <input type="text" id="song_input" placeholder="Song name">
-                    <button onclick="submit(document.querySelector('#song_input').value, false)">Submit Song</button>
-                    <button onclick="submit(document.querySelector('#song_input').value, true)">Submit Video</button>
+                    <button onclick="submit(document.querySelector('#song_input').value)">Submit Song</button>
                 </div>
 
             </div>

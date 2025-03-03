@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  textarea {
+    width: 90%;
+    height: 200px;
+    margin: 10px;
+  }
+  .histogram {
+    margin-top: 20px;
+    color: aliceblue;
+  }
+  .bar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  .word {
+    width: 150px;
+    font-weight: bold;
+  }
+  .bar-graph {
+    height: 20px;
+    background-color: #007bff;
+    margin-left: 10px;
+  }
+  button, input{
+  padding: 10px 15px;
+  background-color: #00aaff;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}

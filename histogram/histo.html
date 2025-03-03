@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Word Frequency Histogram</title>
+  <script src="histo.js" defer charset="UTF-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
+  <script src="https://unpkg.com/mammoth@1.4.8/mammoth.browser.min.js"></script>
+  <link rel="stylesheet" href="histo.css" charset="UTF-8">
+  <link rel="stylesheet" href="../index.css" charset="UTF-8">
+</head>
+<body>
+  <h1>Word Frequency Histogram</h1>
+
+  <input type="file" id="fileInput" accept=".txt,.pdf,.docx,.doc,.odt">
+  <div id="output"></div>
+
+  <textarea id="textInput" placeholder="Enter your text here..."></textarea>
+  <button onclick="generateHistogram()">Generate Histogram</button>
+
+  <div id="histogram" class="histogram"></div>
+</body>
+</html>

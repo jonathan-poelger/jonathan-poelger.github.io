@@ -1,3 +1,5 @@
+if (!localStorage.getItem("userName")) window.location.href = "https://jonathan-poelger.github.io";
+
 // SETUP YOUTUBE PLAYER ========================================
 
 var tag = document.createElement('script');
@@ -77,7 +79,7 @@ let song_queue = [];
 let song_index = -1;
 let game = null;
 
-function submit(title, type){
+function submit(title){
     game.send({type: "song", title: title, name: localStorage.getItem("userName")});
 }
 
@@ -89,11 +91,17 @@ const update_song_list = (reveal = 0) => {
 };
 
 function joinGame(sessionCode) {
+    console.log(sessionCode);
     peer = new Peer();
 
     peer.on("open", (id) => {
         console.log("My Peer ID:", id);
         game = peer.connect(sessionCode);
+
+        game.on("error", (err) => {
+            print("Error:", err);
+           localStorage.removeItem('ongoingGame');
+        });
 
         game.on("open", () => {
             console.log("Connected to Host!");
@@ -113,6 +121,10 @@ function joinGame(sessionCode) {
                 players = data.players;
                 song_queue = data.songs;
                 song_index = data.index;
+            }
+            if (data.type === "hanshake"){
+                document.getElementById("session-code").innerText = data.value;
+                localStorage.setItem('ongoingGame', sessionCode);
             }
             if (data.type === "reveal"){
                 document.querySelector('#player').style.opacity = 1;
@@ -141,6 +153,7 @@ function createGame() {
             if (data.type === "join") {
                 connections.push(conn)
                 players.push(data.name)
+                conn.send({ type: "hanshake", value: hostPeer.id });
             } else if (data.type === "song") {
                 song_queue.push(data);
             } else if (data.type === "next"){
@@ -175,4 +188,8 @@ const reveal = () => {
     if (hostPeer) {
         connections.forEach((conn) => conn.send({ type: "reveal" }));
     }
+}
+
+if (localStorage.getItem("ongoingGame")){
+    document.getElementById("session-input").value = localStorage.getItem("ongoingGame");
 }

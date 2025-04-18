@@ -1,6 +1,6 @@
 const output = document.getElementById('output');
 
-fetch('files/my-data.zip')
+fetch('files/assets.zip')
   .then(res => {
     if (!res.ok) throw new Error('Failed to fetch ZIP');
     return res.arrayBuffer();

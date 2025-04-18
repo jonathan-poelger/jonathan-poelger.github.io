@@ -7,3 +7,6 @@ document.querySelector('.hdiv a').addEventListener('click', function(event) {
     localStorage.setItem('userName', name);
     window.location.href = this.href;
 });
+
+
+

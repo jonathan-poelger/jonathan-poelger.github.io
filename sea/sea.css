@@ -2,3 +2,47 @@ img:hover {
     transform: scale(1.1) rotate(2deg);
   }
   
+
+  /* Top-right menu button */
+#menuBtn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+    font-size: 24px;
+    padding: 10px 15px;
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  #menuBtn:hover {
+    background: rgba(255, 255, 255, 1);
+  }
+  
+  /* Floating center menu */
+  #floatingMenu {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    height: 80%;
+    aspect-ratio: 3 / 2;
+    background: url('files/assets/frigo.jpg') no-repeat center center;
+    background-size: cover;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+  }
+  
+  /* Active state */
+  #floatingMenu.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  

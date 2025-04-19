@@ -8,13 +8,21 @@
 </head>
 
 <body>
-    <div id="output"></div>
-    <!-- Menu button -->
-    <button id="menuBtn">☰</button>
+    <video autoplay muted loop id="background-video">
+        <source src="files/assets/mer.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="content"></div>
+        <div id="output"></div>
+        <!-- Menu button -->
+        <button id="menuBtn">☰</button>
 
-    <!-- Centered floating menu -->
-    <div id="floatingMenu"></div>
-
+        <!-- Centered floating menu -->
+        <div id="floatingMenu" class="floating-menu">
+            <div class="fridge" , id="Fridge"></div>
+            <div class="polaroid" id="Polaroid"></div>
+        </div>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
     <script src="sea.js"></script>
 </body>

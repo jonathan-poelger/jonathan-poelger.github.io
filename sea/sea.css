@@ -175,7 +175,7 @@ img:hover {
 .fridge {
   width: 40%;
   height: 90%;
-  margin-top: 3.5%;
+  margin-top: 1%;
   margin-left: 5%;
   overflow-y: auto;
   background-image: url('files/assets/frigo.jpg');
@@ -184,7 +184,6 @@ img:hover {
   background-repeat: no-repeat;
   border-radius: 20px;
   padding: 30px;
-
 }
 
 .polaroid {

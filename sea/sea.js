@@ -104,7 +104,6 @@ let imageData = [
 window.addEventListener('DOMContentLoaded', () => {
     const sound = document.getElementById('bg-sound');
 
-    // Some browsers block autoplay, so we need to trigger it via user interaction
     const enableSound = () => {
         console.log("PLAY")
         sound.play().catch(err => console.warn('Autoplay failed:', err));

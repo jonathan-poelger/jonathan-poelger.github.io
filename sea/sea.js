@@ -2,102 +2,102 @@ let imageData = [
     {
         path: 'chateau.png',
         text: `ramassons les bouteilles sur les plages<br/>les seaux, les sacs, les mégots, les canettes,<br/>le plastique, le polystyrène, le fer et le verre<br/>fabriquons un château de détritus et de sable`,
-        x: 15, y: 25, height: 110
+        x: 15, y: 70, height: 200
     },
     {
         path: 'chaussures.png',
         text: `faut-il vraiment tout posséder<br/>pour exister`,
-        x: 30, y: 60, height: 90
+        x: 60, y: 85, height: 110
     },
     {
         path: 'coquillage.png',
         text: `la mer pleure<br/>elle aussi`,
-        x: 70, y: 40, height: 80
+        x: 85, y: 85, height: 50
     },
     {
         path: 'dauphin.webp',
         text: `pourquoi mer et terre s’accordent si bien<br/>et les humains si mal<br/>parons nos cheveux de fleurs<br/>pour habiter ensemble`,
-        x: 55, y: 15, height: 100
+        x: 55, y: 5, height: 70
     },
     {
         path: 'enfants.png',
         text: `les enfants méritent-ils<br/>d’avoir une mer souffrante<br/>et un monde en apnée`,
-        x: 10, y: 70, height: 95
+        x: 70, y: 45, height: 130
     },
     {
         path: 'meduse.png',
         text: `les méduses ont pris leur envol<br/>dans le ciel elles dansent<br/>on dirait des oiseaux`,
-        x: 85, y: 20, height: 100
+        x: 15, y: 20, height: 80
     },
     {
         path: 'poisson_jaune.png',
         text: `je voudrais un chapeau d’eau<br/>qui porterait les poissons jusqu’à la lune<br/>un chapeau d’eau qui toucherait les étoiles<br/>pour qu’enfin mer et ciel s’embrassent<br/>je me vêtirais d’une robe faite de vagues<br/>pour danser sous la lune`,
-        x: 40, y: 35, height: 105
+        x: 70, y: 18, height: 50
     },
     {
         path: 'seau.png',
         text: `vidons nos glaçons dans la mer<br/>elle a de la fièvre`,
-        x: 20, y: 55, height: 85
+        x: 80, y: 70, height: 100
     },
     {
         path: 'tortue.png',
         text: `il faut nourrir les tortues<br/>elles abriteront nos demeures`,
-        x: 60, y: 70, height: 90
+        x: 50, y: 70, height: 90
     },
     {
         path: 'baleine.png',
         text: `bientôt les baleines<br/>toucheront les gratte-ciel<br/>le soleil aura les pieds dans l’eau`,
-        x: 75, y: 30, height: 110
+        x: 85, y: 15, height: 150
     },
     {
         path: 'bouteille.webp',
         text: `j’ai essayé d’écrire la mer<br/>pour qu’elle ne déborde pas`,
-        x: 5, y: 80, height: 95
+        x: 5, y: 85, height: 95
     },
     {
         path: 'corail.png',
         text: `j’ai rêvé de constellations<br/>faites d’étoiles et de corail<br/>il y avait des poissons<br/>et la mer qui souriait`,
-        x: 25, y: 10, height: 100
+        x: 35, y: 50, height: 100
     },
     {
         path: 'dechets2.png',
         text: `j’ai attrapé un sac plastique<br/>tout transparent<br/>j’ai essayé de vider la mer<br/>j’ai rempli mon cœur<br/>de tristesse`,
-        x: 35, y: 85, height: 95
+        x: 70, y: 70, height: 500
     },
     {
         path: 'déchets.png',
         text: `balancés par la houle<br/>les déchets s’endorment<br/>dans le gyre du Pacifique`,
-        x: 50, y: 50, height: 100
+        x: 50, y: 50, height: 150
     },
     {
         path: 'etoile_de_mer.webp',
         text: `je ne sais pas nager<br/>peut-être que demain<br/>je mourrais`,
-        x: 45, y: 65, height: 90
+        x: 15, y: 50, height: 70
     },
     {
         path: 'oiseau.png',
         text: `l’horizon tremble sous les vagues<br/>victime silencieuse<br/>de l’érosion des côtes`,
-        x: 65, y: 45, height: 85
+        x: 20, y: 5, height: 85
     },
     {
         path: 'ours_polaire.png',
         text: `ça fond en hiver<br/>comme une glace en été<br/>les ours flottent sur les derniers glaçons`,
-        x: 90, y: 10, height: 105
+        x: 85, y: 8, height: 105
     },
     {
         path: 'poisson2.webp',
         text: `on se ressemble tous<br/>trempés jusqu’aux os<br/>on a froid`,
-        x: 75, y: 65, height: 100
+        x: 35, y: 20, height: 30
     },
     {
         path: 'poisson.webp',
         text: `parfois j’ai peur<br/>il fait noir<br/>sous l’eau`,
-        x: 35, y: 20, height: 80
+        x: 50, y: 25, height: 40
     },
-    {
+{
         path: 'velo.png',
         text: `j’ai dessiné un tricycle<br/>qui transforme les déchets<br/>en poussière d’étoiles<br/>à chaque coup de pédale`,
-        x: 10, y: 40, height: 95
+        x: 32, y: 80, height: 280
     }
 ];
 
@@ -219,7 +219,7 @@ imageData.forEach(data => {
         const now = Date.now();
 
         if (visibleCount >= 2 || now < nextAllowedTime) {
-            showTimeout = setTimeout(tryShow, 1000);
+            showTimeout = setTimeout(tryShow, Math.random() * 10000);
             return;
         }
 
@@ -241,7 +241,7 @@ imageData.forEach(data => {
         }, showDuration);
     }
 
-    tryShow();
+    setTimeout(tryShow, Math.random() * 10000);
 
     img.addEventListener('click', (e) => {
         e.stopPropagation();

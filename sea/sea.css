@@ -104,7 +104,10 @@ img:hover {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  font-size: large;
 }
+
+
 
 #rules {
   position: fixed;
@@ -124,10 +127,15 @@ img:hover {
   align-items: center; 
   text-align: center;
   font-size: 50px;
-  color: white;
+  color: black;
   opacity: 1;
   pointer-events: auto;
   transition: opacity 2s ease;
+  padding-right: 100px;
+  padding-left: 100px;
+  padding-bottom: 25px;
+  display: flex;
+  flex-direction: column;
 }
 
 #rules.hidden {
@@ -151,7 +159,7 @@ img:hover {
 }
 
 .floating-menu_ {
-  background-image: url('files/assets/mur2.jpg');
+  background-image: url('files/assets/mur_4.jpg');
   background-size: cover;
   background-position: center;
   z-index: -1;
@@ -160,20 +168,22 @@ img:hover {
 .fridge {
   width: 40%;
   height: 90%;
-  margin-top: 5%;
+  margin-top: 3.5%;
   margin-left: 5%;
   overflow-y: auto;
   background-image: url('files/assets/frigo.jpg');
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-
+  border-radius: 20px;
+  padding: 30px;
+  
 }
 
 .polaroid {
   width: 40%;
   height: 60%;
-  margin-top: 20%;
+  margin-top: 15%;
   margin-right: 5%;
   text-align: center;
   display: flex;
@@ -185,4 +195,16 @@ img:hover {
   background-position: center;
   background-repeat: no-repeat;
   background-image: url('files/assets/polaroid.webp');
+}
+
+.rules-images {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 50px; 
+}
+
+.rules-images img {
+  height: 125px; 
+  object-fit: contain;
 }

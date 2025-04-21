@@ -94,12 +94,25 @@ let imageData = [
         text: `parfois j’ai peur<br/>il fait noir<br/>sous l’eau`,
         x: 50, y: 25, height: 40
     },
-{
+    {
         path: 'velo.png',
         text: `j’ai dessiné un tricycle<br/>qui transforme les déchets<br/>en poussière d’étoiles<br/>à chaque coup de pédale`,
         x: 32, y: 80, height: 280
     }
 ];
+
+window.addEventListener('DOMContentLoaded', () => {
+    const sound = document.getElementById('bg-sound');
+
+    // Some browsers block autoplay, so we need to trigger it via user interaction
+    const enableSound = () => {
+        console.log("PLAY")
+        sound.play().catch(err => console.warn('Autoplay failed:', err));
+        document.removeEventListener('click', enableSound);
+    };
+
+    document.addEventListener('click', enableSound);
+});
 
 const collectedImages = new Set();
 let activePopupImage = null;
@@ -139,7 +152,7 @@ function animateToMenu(img, data) {
 function addToMenu(data) {
     const thumb = document.createElement('img');
     thumb.src = "files/imgs/" + data.path;
-    thumb.style.width = '25%';
+    thumb.style.width = '30%';
     thumb.style.margin = '5px';
     thumb.title = data.text;
 

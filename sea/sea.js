@@ -169,6 +169,8 @@ popup.style.display = 'none';
 popup.style.zIndex = '1000';
 popup.style.whiteSpace = 'pre-line';
 popup.style.textAlign = 'center';
+popup.style.fontFamily = 'EB Garamond, Garamond, serif';
+popup.style.fontSize = '25px';
 document.body.appendChild(popup);
 
 document.addEventListener('click', (e) => {
@@ -264,6 +266,18 @@ const menuBtn = document.getElementById('menuBtn');
 
 menuBtn.addEventListener('click', () => {
     floatingMenu.classList.toggle('active');
+});
+
+const rulesMenu = document.getElementById('rules');
+
+document.addEventListener('click', () => {
+    rulesMenu.classList.add('hidden');
+});
+
+const infoButton = document.getElementById('infoBtn');
+infoButton.addEventListener('click', (e) => {
+    e.stopPropagation();
+    rulesMenu.classList.remove('hidden');
 });
 
 /*

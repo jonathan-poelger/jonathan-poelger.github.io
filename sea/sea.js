@@ -260,8 +260,17 @@ imageData.forEach(data => {
         popup.style.left = `${e.pageX + 10}px`;
         popup.style.top = `${e.pageY + 10}px`;
         popup.style.display = 'block';
-        activePopupImage = { imgEl: img, data, cancelTimers };
+        
 
+        if (activePopupImage && !collectedImages.has(activePopupImage.data.path)) {
+            const { imgEl, data } = activePopupImage;
+            collectedImages.add(data.path);
+            animateToMenu(imgEl, data);
+            imgEl.style.opacity = '0';
+            imgEl.style.pointerEvents = 'none';
+            visibleCount--;
+        }
+        activePopupImage = { imgEl: img, data, cancelTimers };
         // Cancel timers for this image so it never shows again
         cancelTimers();
     });

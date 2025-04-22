@@ -151,8 +151,6 @@ function animateToMenu(img, data) {
 function addToMenu(data) {
     const thumb = document.createElement('img');
     thumb.src = "files/imgs/" + data.path;
-    thumb.style.width = '30%';
-    thumb.style.margin = '5px';
     thumb.title = data.text;
 
     thumb.addEventListener('click', () => {
@@ -163,6 +161,7 @@ function addToMenu(data) {
 
     Fridge.appendChild(thumb);
 }
+
 
 
 const floatingMenu = document.getElementById('floatingMenu');

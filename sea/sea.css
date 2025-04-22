@@ -1,25 +1,25 @@
-#background-video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-  /* Keeps the video in the background */
-}
-
-body {
+html, body {
   margin: 0;
   padding: 0;
   height: 100%;
   font-family: 'EB Garamond', Garamond, serif;
+  font-size: 1.5vw;
+}
+
+#background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
 }
 
 .content {
   position: relative;
   z-index: 1;
-  padding: 20px;
+  padding: 2%;
   color: white;
 }
 
@@ -27,83 +27,46 @@ img:hover {
   transform: scale(1.1) rotate(2deg);
 }
 
-
-/* Top-right menu button */
-#menuBtn {
+#menuBtn, #infoBtn {
   position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 1001;
-
-  width: 48px;
-  height: 48px;
+  top: 2%;
+  width: 4vw;
+  height: 4vw;
   padding: 0;
-
   background: rgba(255, 255, 255, 0.8);
   border: none;
   border-radius: 50%;
-  /* make it round */
-
-  font-size: 24px;
   font-family: 'EB Garamond', Garamond, serif;
   color: black;
   text-align: center;
-  line-height: 48px;
-  /* centers the "i" vertically */
-
+  line-height: 4vw;
   cursor: pointer;
   transition: background 0.2s ease;
+  z-index: 1001;
+  font-size: 2vw;
 }
 
-#menuBtn:hover {
-  background: rgba(255, 255, 255, 1);
+#menuBtn {
+  right: 2%;
 }
 
 #infoBtn {
-  position: fixed;
-  top: 20px;
-  right: 80px;
-  z-index: 1001;
-
-  width: 48px;
-  /* make it square */
-  height: 48px;
-  padding: 0;
-  /* remove inner padding that can break circle */
-
-  background: rgba(255, 255, 255, 0.8);
-  border: none;
-  border-radius: 50%;
-  /* make it round */
-
-  font-size: 24px;
-  font-weight: bold;
-  font-family: 'EB Garamond', Garamond, serif;
-  color: black;
-  text-align: center;
-  line-height: 48px;
-  /* centers the "i" vertically */
-
-  cursor: pointer;
-  transition: background 0.2s ease;
+  right: 8%;
 }
 
-
-#infoBtn:hover {
+#menuBtn:hover, #infoBtn:hover {
   background: rgba(255, 255, 255, 1);
 }
 
-/* Floating center menu */
 #floatingMenu {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0.8);
-  height: 80%;
-  aspect-ratio: 3 / 2;
-  background-size: cover;
-  border-radius: 16px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  height: 80vh;
+  width: 60vw;
+  border-radius: 2vw;
+  box-shadow: 0 0 2vw rgba(0, 0, 0, 0.4);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease, transform 0.3s ease;
@@ -111,65 +74,24 @@ img:hover {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  font-size: large;
 }
 
-
-
-#rules {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0.8);
-  height: 80%;
-  aspect-ratio: 3 / 2;
-  background-size: cover;
-  border-radius: 16px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-  pointer-events: none;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  z-index: 1000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-size: 50px;
-  color: black;
-  opacity: 1;
-  pointer-events: auto;
-  transition: opacity 2s ease;
-  padding-right: 100px;
-  padding-left: 100px;
-  padding-bottom: 25px;
-  display: flex;
-  flex-direction: column;
-}
-
-#rules.hidden {
-  opacity: 0;
-  pointer-events: none;
-}
-
-/* Active state */
 #floatingMenu.active {
   opacity: 1;
   pointer-events: auto;
   transform: translate(-50%, -50%) scale(1);
 }
 
-
 .floating-menu {
   background-image: url('files/assets/mur.jpg');
   background-size: cover;
   background-position: center;
-  z-index: -1;
 }
 
 .floating-menu_ {
-  background-image: url('files/assets/mur_4.jpg');
+  background-image: url('files/assets/mur3.png');
   background-size: cover;
   background-position: center;
-  z-index: -1;
 }
 
 .fridge {
@@ -177,40 +99,88 @@ img:hover {
   height: 90%;
   margin-top: 1%;
   margin-left: 5%;
-  overflow-y: auto;
+  overflow: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center; /* this is the vertical centering key */
   background-image: url('files/assets/frigo.jpg');
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  border-radius: 20px;
-  padding: 30px;
+  border-radius: 2vw;
+  padding: 3%;
 }
 
+
+.fridge img {
+  max-width: 25%;         /* Responsive within fridge */
+  height: auto;
+  margin: 1%;
+  object-fit: contain;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+
 .polaroid {
-  width: 40%;
+  width: 45%;
   height: 60%;
-  margin-top: 15%;
-  margin-right: 5%;
+  margin: 10% 3% 0 0;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  background-image: url('files/assets/polaroid.png');
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url('files/assets/polaroid.webp');
+  font-size: 1.25vw;
+}
+
+#rules {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  height: 80vh;
+  width: 60vw;
+  border-radius: 2vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: black;
+  padding: 2vh 5vw; /* Top padding here if needed for text, NOT for image */
+  transition: opacity 2s ease;
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 1000;
+}
+
+
+#rules.hidden {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .rules-images {
-  margin-top: 50px;
-  display: flex;
-  justify-content: center;
-  gap: 50px;
+  width: 100%;
+  height: auto; /* or use height: 20vh if you prefer */
+  object-fit: contain;
+  margin: 0; /* no margin so it touches top */
+  padding: 0;
 }
 
 .rules-images img {
-  height: 125px;
+  height: 10vh;
   object-fit: contain;
+}
+
+.rules-text {
+  margin-top: 30vh;
+  margin-right: 10vw;
+  margin-left: 10vw;
+  padding: 1vh 0;
 }
